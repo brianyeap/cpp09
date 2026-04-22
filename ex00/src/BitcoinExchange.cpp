@@ -6,7 +6,7 @@
 /*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 23:08:47 by bryeap            #+#    #+#             */
-/*   Updated: 2026/04/09 01:48:57 by bryeap           ###   ########.fr       */
+/*   Updated: 2026/04/22 16:44:46 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,8 +156,8 @@ void BitcoinExchange::execute(char const *fileName)
 		std::getline(ss, date, '|');
 		std::getline(ss, amountStr, '|');
 
-		if (!date.empty() && date.back() == ' ')
-			date = date.erase(date.length() -1); // remove trailing space
+		if (!date.empty() && date[date.size() - 1] == ' ')
+			date = date.erase(date.size() -1); // remove trailing space
 		if (_validateDate(date) == false)
 		{
 			std::cout << "Error: bad input => " << date << std::endl;
